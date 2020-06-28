@@ -6,6 +6,7 @@ require 'pry'
 require 'cucumber'
 require 'rspec'
 require 'faker'
+require 'axe/cucumber/step_definitions'
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome
