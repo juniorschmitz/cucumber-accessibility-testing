@@ -1,16 +1,18 @@
+# language: pt-br
+
 @full_regression
 @search
-Feature: Products Search
-  I would like to be able to search for products
-  As a user
-  So I can buy stuff after
+Funcionalidade: Busca por Produtos
+  Gostaria de poder buscar por produtos
+  Sendo um usuário do site
+  Para poder finalizar compras após
 
-Scenario: Search for valid product
-  Given i am on the home page
-  When i search for the product "shirt"
-  Then there should be some results
+Cenário: Busca por um produto válido
+  Dado que esteja na página home
+  Quando realizo uma busca pelo produto "shirt"
+  Então devem ser apresentados resultados
 
-Scenario: Search for inexistent product
-  Given i am on the home page
-  When i search for the product "camiseta"
-  Then there should not be product results
+Cenário: Search for inexistent product
+  Dado que esteja na página home
+  Quando realizo uma busca pelo produto "camiseta"
+  Então não devem ser apresentados resultados

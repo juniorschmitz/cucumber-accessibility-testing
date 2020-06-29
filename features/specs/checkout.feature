@@ -1,14 +1,16 @@
+# language: pt-br
+
 @full_regression
 @checkout
-Feature: Checkout flows on the Fake Ecommerce
-  As a site administrator
-  I would like to have a checkout flow delivered
-  So the Ecommerce users could buy clothes
+Funcionalidade: Fluxos de Checkout no Ecommerce Fake
+  Como um administrador do fake Ecommerce
+  Eu gostaria que os usuários conseguissem finalizar compras
+  Para que os usuários possam comprar roupas
 
-Scenario: Common Checkout Flow
-  Given i am logged in with email "potato@teste.com" and password "abc123"
-  When i search for the product "shirt"
-  And add the product to my bag
-  And select the address and delivery method
-  And finalize the checkout with payment by check
-  Then the order should be placed successfully
+Cenário: Comprar um produto com método de pagamento cheque
+  Dado que fiz login com email "potato@teste.com" e senha "abc123"
+  Quando realizo uma busca  pelo produto "shirt"
+  E adiciono o produto à sacola
+  E seleciono o endereço e forma de entrega
+  E finalizo a compra com pagameno por cheque
+  Então deve finalizar o pedido com sucesso

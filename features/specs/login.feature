@@ -1,16 +1,18 @@
+# language: pt-br
+
 @full_regression
 @login
-Feature: Login on the Fake Ecommerce
-  I would like to be able to login on the application
-  As a common user
-  So I can navigate and buy stuff
+Funcionalidade: Login no Fake Ecommerce
+  Gostaria de poder logar na aplicação
+  Sendo um usuário comum
+  Para que eu possa navegar e comprar
 
-Scenario: Login Successfuly
-  Given i access the login page
-  And login with email "potato@teste.com" and password "abc123"
-  Then i should be logged in successfully
+Cenário: Login com Sucesso
+  Dado que acessei a página de login
+  E faço login com email "potato@teste.com" e senha "abc123"
+  Então devo ser logado com sucesso
 
-Scenario: Invalid Login
-  Given i access the login page
-  And login with email "potato@teste.com" and password "abc1234"
-  Then the login should fail
+Cenário: Login Inválido
+  Dado que acessei a página de login
+  E faço login com email "potato@teste.com" e senha "abc1234"
+  Então não devo ser logado

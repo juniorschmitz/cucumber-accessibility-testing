@@ -1,12 +1,14 @@
+# language: pt-br
+
 @full_regression
 @register
-Feature: Registration on the Fake Ecommerce
-  I would like to be able to register on the application
-  As a common user
-  So I can navigate and buy stuff
+Funcionalidade: Cadastro no Fake Ecommerce
+  Sendo um visitante do site
+  Gostaria de poder me cadastrar
+  Para conseguir navegar, alterar dados e finalizar compras
 
-Scenario: Registration successfuly
-  Given i access the login page
-  When i select the registration option
-  And register with valid data
-  Then i should be logged in successfully
+Cenário: Cadastro de usuário com sucesso
+  Dado que acessei a página de login
+  Quando seleciono a opção de cadastro
+  E cadastro com dados válidos
+  Então devo logar com sucesso

@@ -1,14 +1,14 @@
-Given("i am on the home page") do
+Dado("que esteja na página home") do
   @home_page = HomePage.new
   @home_page.load
 end
 
-Then("there should be some results") do
+Então("devem ser apresentados resultados") do
   @search_page = SearchPage.new
   expect(@search_page).to have_products
 end
 
-Then("there should not be product results") do
+Então("não devem ser apresentados resultados") do
   @search_page = SearchPage.new
   expect(@search_page).not_to have_products
 end

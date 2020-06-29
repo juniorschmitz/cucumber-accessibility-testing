@@ -1,31 +1,31 @@
-Given("i am logged in with email {string} and password {string}") do |email, password|
+Dado("que fiz login com email {string} e senha {string}") do |email, password|
   steps %{
-    Given i access the login page
-    When login with email "#{email}" and password "#{password}"
-    Then i should be logged in successfully
+    Dado que esteja na página home
+    Quando faço login com email "#{email}" e senha "#{password}"
+    Então devo ser logado com sucesso
   }
 end
 
-When("i search for the product {string}") do |product|
+Quando("realizo uma busca pelo produto {string}") do |product|
   @home_page = HomePage.new
   @home_page.header.search product
 end
 
-When("add the product to my bag") do
+Quando("adiciono o produto à sacola") do
   @search_page = SearchPage.new
   @search_page.add_product_to_bag 0
 end
 
-When("select the address and delivery method") do
+Quando("seleciono o endereço e a forma de entrega") do
   @checkout_page = CheckoutPage.new
   @checkout_page.advance_steps
 end
 
-When("finalize the checkout with payment by check") do
+Quando("finalizo a compra com pagamento por cheque") do
   @checkout_page.finalize_with_check
 end
 
-Then("the order should be placed successfully") do
+Então("deve finalizar o pedido com sucesso") do
   @checkout_result_page = CheckoutResultPage.new
   @checkout_result_page.wait_until_alert_success_visible
   expect(@checkout_result_page).to have_alert_success
